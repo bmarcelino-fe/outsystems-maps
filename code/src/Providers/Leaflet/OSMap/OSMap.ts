@@ -309,7 +309,7 @@ namespace Provider.Leaflet.OSMap {
         public dispose(): void {
             super.dispose();
 
-            if (this._fBuilder) {
+            if (this.isReady) {
                 this._fBuilder.dispose();
             }
 
