@@ -190,6 +190,8 @@ namespace Provider.Leaflet.OSMap {
             // Make sure to change the center after the conversion of the location to coordinates
             this.features.center.updateCenter(currentCenter as string);
             this._setMapEvents();
+            // Due to an issue on the leaftlet library, the height needs to be updated on first render
+            OSFramework.Helper.AsyncInvocation(this.updateHeight.bind(this));
         }
 
         public buildFeatures(): void {
